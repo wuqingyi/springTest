@@ -1,10 +1,7 @@
 package com.wqy;
 
 import com.wqy.configs.*;
-import com.wqy.services.ElService;
-import com.wqy.services.FunctionService;
-import com.wqy.services.FunctionService2;
-import com.wqy.services.InitDestroyService;
+import com.wqy.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
@@ -50,9 +47,19 @@ public class App
 //        context.close();
 
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(InitDestroyConfig.class);
-        InitDestroyService initDestroyService = context.getBean(InitDestroyService.class);
-        initDestroyService.print();
+        //设置服务的初始化方法和销毁方法
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(InitDestroyConfig.class);
+//        InitDestroyService initDestroyService = context.getBean(InitDestroyService.class);
+//        initDestroyService.print();
+//        context.close();
+
+        //spring 多线程。
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TaskExecutorConfig.class);
+        AsyncTaskService asyncTaskService = context.getBean(AsyncTaskService.class);
+        for (int i = 0; i < 10; i++) {
+            asyncTaskService.executeAsyncTask(i);
+            asyncTaskService.executeAsycTaskPlus(i);
+        }
         context.close();
     }
 }
