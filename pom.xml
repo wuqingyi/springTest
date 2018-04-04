@@ -26,14 +26,14 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.0.9.RELEASE</version>
+            <version>5.0.5.RELEASE</version>
         </dependency>
 
         <!--用于AOP-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>4.0.9.RELEASE</version>
+            <version>5.0.5.RELEASE</version>
         </dependency>
 
         <dependency>

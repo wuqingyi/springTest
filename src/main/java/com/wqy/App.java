@@ -26,11 +26,11 @@ public class App
 //        context.close();
 
         //spring AOP，关注around建言。
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
-////        context.scan("com.wqy.services");//可以再这里添加额外的包进行扫描。
-//        FunctionService service = context.getBean(FunctionService.class);
-//        System.out.println(service.sayHello("wuqy"));
-//        context.close();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
+//        context.scan("com.wqy.services");//可以再这里添加额外的包进行扫描。
+        FunctionService service = context.getBean(FunctionService.class);
+        System.out.println(service.sayHello("wuqy"));
+        context.close();
 
         //@Scope用于描述的是Spring容器如何新建Bean的实例的，再service注解为prototype，每次使用该service，都会创建新的实例。
 //        //因此service.equals(service2)为false。默认为singleton。
