@@ -54,12 +54,19 @@ public class App
 //        context.close();
 
         //spring 多线程。
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TaskExecutorConfig.class);
-        AsyncTaskService asyncTaskService = context.getBean(AsyncTaskService.class);
-        for (int i = 0; i < 10; i++) {
-            asyncTaskService.executeAsyncTask(i);
-            asyncTaskService.executeAsycTaskPlus(i);
-        }
-        context.close();
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TaskExecutorConfig.class);
+//        AsyncTaskService asyncTaskService = context.getBean(AsyncTaskService.class);
+//        for (int i = 0; i < 10; i++) {
+//            asyncTaskService.executeAsyncTask(i);
+//            asyncTaskService.executeAsycTaskPlus(i);
+//        }
+//        context.close();
+
+
+        //spring 计划任务，context不能调用close方法。
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ScheduleConfig.class);
+
+
+        
     }
 }
