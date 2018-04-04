@@ -27,7 +27,7 @@ public class App
 
         //spring AOP，关注around建言。
 //        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
-//        context.scan("com.wqy.services");//可以再这里添加额外的包进行扫描。
+////        context.scan("com.wqy.services");//可以再这里添加额外的包进行扫描。
 //        FunctionService service = context.getBean(FunctionService.class);
 //        System.out.println(service.sayHello("wuqy"));
 //        context.close();
